@@ -981,10 +981,40 @@ ul {
 }
 
 .agreement-field {
+  position: relative;
   margin-bottom: 30px;
 }
 
 .check-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox {
+  position: absolute;
+  left: 12px;
+  box-sizing: border-box;
+  width: 16px;
+  height: 15px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--theme-nav);
+  border-radius: 2px;
+  transition: border-color var(--chang-time) var(--chang-func),
+    fill var(--chang-time) var(--chang-func);
+}
+
+.check-input:checked + .checkbox {
+  border-color: var(--theme-accent);
+  fill: var(--theme-accent);
 }
 
 .agreement-field > .form-label {
@@ -993,6 +1023,8 @@ ul {
 }
 
 .agreement-text {
+  position: absolute;
+  left: 36px;
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 14px;
