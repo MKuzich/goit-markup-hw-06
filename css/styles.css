@@ -3,6 +3,7 @@
   --theme-accent: #2196f3;
   --theme-light: #ffffff;
   --theme-description: #757575;
+  --theme-placeholder: rgba(117, 117, 117, 0.5);
   --theme-contacts: rgba(255, 255, 255, 0.6);
   --theme-nav: #212121;
   --theme-input-bckgrnd: rgba(33, 33, 33, 0.2);
@@ -648,19 +649,20 @@ ul {
   background-color: var(--theme-accent);
   width: 200px;
   height: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-color: var(--theme-accent);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color var(--chang-time) var(--chang-func);
+  transition: background-color var(--chang-time) var(--chang-func),
+    box-shadow var(--chang-time) var(--chang-func);
 }
 
 .footer-form-btn:hover,
 .footer-form-btn:focus {
   background-color: var(--theme-btn);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .btn-txt {
@@ -910,6 +912,7 @@ ul {
 }
 
 .modal-form-name {
+  display: inline-block;
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 12px;
@@ -945,4 +948,41 @@ ul {
 
 .form-input:focus + .modal-icon {
   fill: var(--theme-accent);
+}
+
+.comment-field {
+  margin-bottom: 20px;
+}
+
+.comment-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid var(--theme-input-bckgrnd);
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: border-color var(--chang-time) var(--chang-func);
+}
+
+.comment-input:focus {
+  position: relative;
+}
+
+.comment-input::placeholder {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--theme-placeholder);
+}
+
+.modal-form .footer-form-btn {
+  margin-left: auto;
+  margin-right: auto;
 }
