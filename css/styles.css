@@ -5,6 +5,7 @@
   --theme-description: #757575;
   --theme-contacts: rgba(255, 255, 255, 0.6);
   --theme-nav: #212121;
+  --theme-input-bckgrnd: rgba(33, 33, 33, 0.2);
   --theme-bckgrnd-hero: #2f303a;
   --theme-btn: #188ce8;
   --theme-bckgrnd-team: #f5f4fa;
@@ -511,6 +512,10 @@ ul {
   background-color: var(--theme-bckgrnd-hero);
 }
 
+.footer-address-container {
+  width: 231px;
+}
+
 .logo-footer {
   display: inline-block;
   margin-bottom: 20px;
@@ -602,6 +607,77 @@ ul {
   fill: var(--theme-light);
   height: 20px;
   width: 20px;
+}
+
+.footer-form-container {
+  margin-left: 93px;
+}
+
+.footer-form {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-form input {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  width: 358px;
+  height: 50px;
+  background-color: var(--theme-bckgrnd-hero);
+  margin-right: 12px;
+  padding-left: 16px;
+  color: var(--theme-light);
+}
+
+.footer-form input::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: var(--theme-contacts);
+}
+
+.footer-form-btn {
+  background-color: var(--theme-accent);
+  width: 200px;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: var(--theme-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--chang-time) var(--chang-func);
+}
+
+.footer-form-btn:hover,
+.footer-form-btn:focus {
+  background-color: var(--theme-btn);
+}
+
+.btn-txt {
+  color: var(--theme-light);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  margin-right: 10px;
+}
+
+.send-icon {
+  fill: var(--theme-light);
+  height: 24px;
+  width: 24px;
 }
 
 /*  examples section */
@@ -797,4 +873,76 @@ ul {
   border-color: var(--theme-border);
   background-color: var(--theme-light);
   cursor: pointer;
+}
+
+.close-icon {
+  fill: var(--theme-main);
+  height: 18px;
+  width: 18px;
+  transition: fill var(--chang-time) var(--chang-func);
+}
+
+.modal-btn:focus > .close-icon,
+.modal-btn:hover > .close-icon {
+  fill: var(--theme-accent);
+}
+
+.modal-form {
+  padding: 40px;
+}
+
+.modal-strong {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--theme-nav);
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.modal-form-name {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.form-input {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid var(--theme-input-bckgrnd);
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: border-color var(--chang-time) var(--chang-func);
+}
+
+.form-input:focus {
+  border-color: var(--theme-accent);
+}
+
+.modal-icon {
+  position: absolute;
+  top: 29px;
+  left: 12px;
+  fill: var(--theme-nav);
+  height: 18px;
+  width: 18px;
+  transition: fill var(--chang-time) var(--chang-func);
+}
+
+.form-input:focus + .modal-icon {
+  fill: var(--theme-accent);
 }
