@@ -993,18 +993,16 @@ ul {
   box-sizing: border-box;
   width: 16px;
   height: 15px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--theme-nav);
-  border-radius: 2px;
   fill: var(--theme-light);
-  transition: border-color var(--chang-time) var(--chang-func),
+  border-radius: 2px;
+  transition: box-shadow var(--chang-time) var(--chang-func),
     background-color var(--chang-time) var(--chang-func);
+  box-shadow: inset 0 0 0 2px var(--theme-nav);
 }
 
 .check-input:checked + .checkbox {
-  border-color: var(--theme-accent);
   background-color: var(--theme-accent);
+  box-shadow: inset 0 0 0 2px var(--theme-accent);
 }
 
 .agreement-field > .form-label {
