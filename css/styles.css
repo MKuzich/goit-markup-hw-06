@@ -851,7 +851,7 @@ ul {
   top: 50%;
   left: 50%;
   width: 528px;
-  height: 581px;
+  padding: 40px;
   border-radius: 4px;
   background: var(--theme-light);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -887,10 +887,6 @@ ul {
 .modal-btn:focus > .close-icon,
 .modal-btn:hover > .close-icon {
   fill: var(--theme-accent);
-}
-
-.modal-form {
-  padding: 40px;
 }
 
 .modal-strong {
@@ -975,18 +971,12 @@ ul {
   color: var(--theme-placeholder);
 }
 
-.modal-form .footer-form-btn {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .agreement-field {
-  position: relative;
   margin-bottom: 30px;
+  padding-left: 12px;
 }
 
 .check-input {
-  position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -999,8 +989,7 @@ ul {
 }
 
 .checkbox {
-  position: absolute;
-  left: 12px;
+  margin-right: 8px;
   box-sizing: border-box;
   width: 16px;
   height: 15px;
@@ -1010,12 +999,12 @@ ul {
   border-radius: 2px;
   fill: var(--theme-light);
   transition: border-color var(--chang-time) var(--chang-func),
-    fill var(--chang-time) var(--chang-func);
+    background-color var(--chang-time) var(--chang-func);
 }
 
 .check-input:checked + .checkbox {
   border-color: var(--theme-accent);
-  fill: var(--theme-accent);
+  background-color: var(--theme-accent);
 }
 
 .agreement-field > .form-label {
@@ -1024,8 +1013,6 @@ ul {
 }
 
 .agreement-text {
-  position: absolute;
-  left: 36px;
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 14px;
@@ -1040,4 +1027,6 @@ ul {
 .modal-form > .footer-form-btn {
   display: flex;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
