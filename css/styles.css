@@ -1028,3 +1028,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
 }
+
+.check-input + .checkbox:focus {
+  box-shadow: inset 0 0 0 2px var(--theme-accent);
+}
