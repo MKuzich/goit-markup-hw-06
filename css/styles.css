@@ -58,13 +58,34 @@ img {
 }
 
 .container {
-  width: 1158px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    width: 1158px;
+    padding: 0 15px;
+  }
 }
 
 .section {
-  padding: 120px 0;
+  padding: 96px 0;
+}
+@media screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0;
+  }
 }
 
 .logo {
@@ -76,6 +97,7 @@ img {
   line-height: 1.17;
   letter-spacing: 0.03em;
   margin-right: 76px;
+  padding: 16px 0;
 }
 .logo-accent {
   color: var(--dark-color);
@@ -96,10 +118,35 @@ img {
   display: flex;
   align-items: center;
 }
-
 .header-list {
-  display: flex;
-  gap: 40px;
+  display: none;
+}
+.header-address li {
+  font-size: 12px;
+  line-height: 1.16;
+}
+@media screen and (min-width: 768px) {
+  .header-list {
+    display: flex;
+    gap: 40px;
+  }
+  .header-address .header-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .logo {
+    padding: 24px 0;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .header-address .header-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .header-address li {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .header-list li:first-child .header-nav-link {
@@ -149,9 +196,17 @@ img {
 .header-address-link:focus {
   color: var(--pressed-color);
 }
-
+.header-menu-btn {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.hero-menu-icon {
+  stroke: var(--dark-color);
+}
 .hero {
-  padding: 188px 0;
+  padding: 72px 0;
   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url('../images/people-office.jpg');
   background-position: center;
@@ -160,21 +215,52 @@ img {
   background-size: cover;
   margin: 0 auto;
 }
+@media (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url('../images/people-office@2x.jpg');
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 112px 0;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .hero {
+    padding: 188px 0;
+  }
+}
 
 .hero > .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 72px;
 }
 .hero-title {
   text-align: center;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   color: var(--white-color);
   font-weight: 700;
-  max-width: 496px;
+  max-width: 216px;
   letter-spacing: 0.02em;
+}
+@media screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
+  }
+  .hero > .container {
+    gap: 36px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .hero > .container {
+    gap: 48px;
+  }
 }
 .hero-cta {
   color: var(--white-color);
@@ -193,18 +279,36 @@ img {
 }
 
 .advantage-block {
-  display: flex;
-  justify-content: center;
-  background-color: var(--light-color);
-  border: 1px solid var(--subtle-color);
-  border-radius: 4px;
-  margin-bottom: 8px;
-  align-items: center;
-  height: 112px;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .advantages .card-title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1157px) {
+  .advantages .card-title {
+    font-size: 36px;
+    line-height: 1.11;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .advantage-block {
+    display: flex;
+    justify-content: center;
+    background-color: var(--light-color);
+    border: 1px solid var(--subtle-color);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    align-items: center;
+    height: 112px;
+  }
 }
 
 .list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
 }
 
@@ -224,6 +328,7 @@ img {
   background-color: var(--white-color);
   border-radius: 0 0 4px 4px;
   box-shadow: var(--shadow);
+  width: 264px;
 }
 
 .team .card-text {
@@ -267,7 +372,18 @@ img {
 
 .card {
   background-color: var(--white-color);
-  width: calc((100% - 72px) / 4);
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: calc((100% - 24px) / 2);
+  }
+}
+@media screen and (min-width: 1158px) {
+  .card {
+    width: calc((100% - 72px) / 4);
+  }
 }
 .card-title {
   margin-bottom: 8px;
@@ -278,8 +394,18 @@ img {
 }
 
 .portfolio .card {
-  width: calc((100% - 48px) / 3);
+  width: 100%;
   transition: box-shadow var(--transition);
+}
+@media screen and (min-width: 768px) {
+  .portfolio .card {
+    width: calc((100% - 24px) / 2);
+  }
+}
+@media screen and (min-width: 1158px) {
+  .portfolio .card {
+    width: calc((100% - 48px) / 3);
+  }
 }
 .card-img-wrapper {
   position: relative;
@@ -325,6 +451,20 @@ img {
   background-color: var(--hero-bg-color);
   padding: 100px 0;
 }
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer .container {
+    padding: 0 108px;
+  }
+  .footer-col {
+    margin-right: 24px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .footer-col {
+    margin-right: 120px;
+  }
+}
+
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -340,10 +480,8 @@ img {
 .footer-cols {
   display: flex;
   align-items: baseline;
-}
-
-.footer-col {
-  margin-right: 120px;
+  flex-wrap: wrap;
+  row-gap: 72px;
 }
 
 .cols-title {
@@ -351,6 +489,25 @@ img {
   margin-bottom: 16px;
   font-size: 16px;
   font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  .cols-title {
+    text-align: center;
+  }
+  .footer-cols {
+    justify-content: center;
+  }
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo {
+    margin-right: 0;
+  }
+  .footer-form {
+    justify-content: center;
+  }
 }
 .footer-socials .social-list {
   gap: 16px;
@@ -360,18 +517,8 @@ img {
 .footer-socials .social-link:focus {
   background-color: var(--success-color);
 }
-
-.form-wrapper {
-  margin-left: 80px;
-}
-
-.footer-form {
-  display: flex;
-  gap: 24px;
-}
-
 .footer-form-input {
-  width: 264px;
+  width: 288px;
   height: 40px;
   border: 1px solid var(--white-color);
   background-color: transparent;
@@ -382,6 +529,21 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   color: var(--white-color);
+}
+.footer-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@media screen and (min-width: 768px) {
+  .footer-form-input {
+    width: 264px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .form-wrapper {
+    margin-left: 80px;
+  }
 }
 
 .footer-form-input::placeholder {
